@@ -1,0 +1,50 @@
+
+.new-tweet {
+  background-color: #eee;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  left: 2em;
+  margin: auto;
+  padding: 10px;
+  right: 2em;
+  width: 400px;
+}
+
+.new-tweet h2 {
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid black;
+  top: 0;
+
+
+}
+
+.new-tweet form {
+  display: block;
+  margin: 0;
+  padding-top: 20px;
+
+}
+
+.new-tweet textarea {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+
+}
+
+.new-tweet input {
+
+
+}
+
+.new-tweet .counter {
+  display: block;
+  line-height: 30px;
+  float: right;
+  margin: 0;
+  position: relative;
+
+}
