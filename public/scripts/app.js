@@ -53,9 +53,11 @@ $(function() {
     }
   ];
 
+  var $container = $('#tweets-container');
   function renderTweets(tweets) {
+    // possible to use .map() instead of .forEach()
     tweets.forEach(function(tweet) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $container.append(createTweetElement(tweet));
     });
   }
 
@@ -63,10 +65,9 @@ $(function() {
     var name = tweetData.user.name;
     var avatar = tweetData.user.avatars.regular;
     var handle = tweetData.user.handle;
-    var content = tweetData.content["text"];
+    var content = tweetData.content.text;
     var date = tweetData.created_at;
 
-    var $header = $('<header>');
     // var $avatar = $('<img href=' + avatar + '>').addClass('display-picture');
     var $avatar = $('<img>')
       .addClass('display-picture')
