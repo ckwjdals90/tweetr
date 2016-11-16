@@ -8,6 +8,10 @@ $(function() {
     var counterOutput = $(".counter");
     var counterValue = 140 - inputLength;
     counterOutput.text(counterValue);
+    if (counterValue < 0) {
+      counterOutput.css("color", "red");
+    } else {
+      counterOutput.css("color", "black");
     }
   });
 
