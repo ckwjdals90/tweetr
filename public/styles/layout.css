@@ -17,12 +17,11 @@ html {
  */
 
 body {
-  margin: 0;
   background-color: #eee;
   color: #244751;
   display: block;
   font-family: "Roboto", sans-serif;
-  height: 100%;
+  margin: 0;
   padding-top: 50px;
 }
 

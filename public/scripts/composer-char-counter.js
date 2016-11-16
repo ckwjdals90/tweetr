@@ -2,7 +2,6 @@
 // $( document ).on("ready", function() {
 // $( document ).ready(function() {
 $(function() {
-
   $( "#tweet-text" ).on("keyup", function() {
     var inputLength = $(this).val().length;
     var counterOutput = $(".counter");
@@ -14,5 +13,4 @@ $(function() {
       counterOutput.css("color", "black");
     }
   });
-
 });
