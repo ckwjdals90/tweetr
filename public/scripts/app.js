@@ -54,10 +54,13 @@ var data = [
 ];
 
 function renderTweets(tweets) {
-  tweets.forEach(tweetData) {
-    return createTweetElement(tweetData);
-  }
+  tweets.forEach(function(tweet) {
+    $('#tweets-container').append(createTweetElement(tweet));
+  });
 }
+
+// var $tweet = createTweetElement(tweetData);
+// $('#tweets-container').append($tweet);
 
 function createTweetElement(tweetData) {
 
@@ -78,7 +81,11 @@ function createTweetElement(tweetData) {
 
   var $content = $('<p>').text(content);
 
-  var $footer = $('<footer>').append( $('<h5>').text(date) );
+  var $footer = $('<footer>')
+    .append($('<h5>').text(date))
+    .append($('<a>').attr('href', '#').text('A'))
+    .append($('<a>').attr('href', '#').text('B'))
+    .append($('<a>').attr('href', '#').text('C'));
   // var $date = $('<h5>' + date + '</h5>');
   // var $footer = $('<footer>')
   // var $footerclose = $('</footer>');
