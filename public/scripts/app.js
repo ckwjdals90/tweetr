@@ -53,11 +53,11 @@ $(function() {
     }
   ];
 
-  var $container = $('#tweets-container');
+  var $container = $('#tweets-container').html('');
   function renderTweets(tweets) {
     // possible to use .map() instead of .forEach()
     tweets.forEach(function(tweet) {
-      $container.append(createTweetElement(tweet));
+      $container.prepend(createTweetElement(tweet));
     });
   }
 
@@ -81,6 +81,7 @@ $(function() {
       .append($('<a>').attr('href', '#').text('A'))
       .append($('<a>').attr('href', '#').text('B'))
       .append($('<a>').attr('href', '#').text('C'));
+
     // var $date = $('<h5>' + date + '</h5>');
     // var $footer = $('<footer>')
     // var $footerclose = $('</footer>');
@@ -98,6 +99,41 @@ $(function() {
 
     return $tweet;
   }
-  renderTweets(data);
+
+  $('form[action="/tweets"]').on('submit', function (event) {
+    event.preventDefault();
+    var thisForm = $(this);
+
+    $.ajax({
+      method: thisForm.attr('method'),
+      url: thisForm.attr('action'),
+      data: thisForm.find("textarea").serialize(),
+      success: function() {
+        loadTweets();
+      }
+    });
+
+    loadTweets();
+  });
+  loadTweets();
+
+
+
+
+function loadTweets() {
+  $.ajax({
+    method: 'GET',
+    url: '/tweets',
+    success: function(tweetsData) {
+      renderTweets(tweetsData)},
+    error: function (error) {
+      alert(error);
+    }
+  });
+};
+
+
+
+
 });
 
