@@ -103,6 +103,16 @@ $(function() {
   $('form[action="/tweets"]').on('submit', function (event) {
     event.preventDefault();
     var thisForm = $(this);
+    var inputText = thisForm.find("textarea").val()
+
+    if (inputText.length == "") {
+      $(this).append($("<p>").text("NO CONTENT!").css("float", "right").delay(300).fadeOut('slow'))
+      return false;
+    }
+    if (inputText.length >140) {
+      $(this).append($("<p>").text("CONTENT LIMIT EXCEEDED!").css("float", "right").delay(300).fadeOut('slow'))
+      return false;
+    }
 
     $.ajax({
       method: thisForm.attr('method'),
@@ -112,6 +122,9 @@ $(function() {
         loadTweets();
       }
     });
+
+    $("form").trigger("reset");
+    $(".counter").text(140);
 
     loadTweets();
   });
@@ -132,7 +145,16 @@ function loadTweets() {
   });
 };
 
-
+$("#compose-butt").click(function(event) {
+  event.preventDefault;
+  if ( $(".new-tweet:first").is(":hidden") ) {
+    $(".new-tweet").slideDown('slow').addClass("active").done(function() {
+      $("#tweet-text").focus().select();
+    });
+  } else {
+    $(".new-tweet").slideUp("fast").removeClass("active");
+  }
+})
 
 
 });

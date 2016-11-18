@@ -3,13 +3,16 @@
   background-color: #eee;
   border-radius: 5px;
   box-sizing: border-box;
-  display: block;
+  display: none;
   font-family: "Roboto", sans-serif;
   left: 2em;
   margin: auto;
   padding: 10px;
   right: 2em;
   width: 400px;
+}
+.new-tweet.active {
+  display:block;
 }
 
 .new-tweet h2 {

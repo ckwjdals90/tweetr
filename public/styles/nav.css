@@ -26,3 +26,24 @@
   padding-left: 10px;
 
 }
+
+#nav-bar #compose-butt {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #10d0b2;
+  display: block;
+  float: right;
+  line-height: 50px;
+  margin: 10px 0;
+  opacity: 0.85;
+  padding: 5px;
+  width: 120px;
+}
+
+#nav-bar #compose-butt:hover {
+  color: black;
+  opacity: 1;
+
+}
