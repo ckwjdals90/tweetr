@@ -14,6 +14,7 @@ $(function() {
     });
   }
 
+
   function createTweetElement(tweetData) {
     var name = tweetData.user.name;
     var avatar = tweetData.user.avatars.regular;
@@ -25,8 +26,8 @@ $(function() {
     var $avatar = $('<img>')
       .addClass('display-picture')
       .attr('src', avatar);
-    var $name = $('<h2>').text(name);
     // <h2>name</h2>
+    var $name = $('<h2>').text(name);
     var $handle = $('<h4>').text(handle);
     var $content = $('<p>').text(content);
     var $footer = $('<footer>')
@@ -36,8 +37,6 @@ $(function() {
       .append($('<i>').addClass('fa fa-flag').attr('aria-hidden', 'true'));
 
     // var $date = $('<h5>' + date + '</h5>');
-    // var $footer = $('<footer>')
-    // var $footerclose = $('</footer>');
 
     var $tweet = $('<article>')
       .addClass('tweet')
@@ -52,6 +51,7 @@ $(function() {
 
     return $tweet;
   }
+
 
   $('form[action="/tweets"]').on('submit', function (event) {
     event.preventDefault();
@@ -84,8 +84,6 @@ $(function() {
   loadTweets();
 
 
-
-
 function loadTweets() {
   $.ajax({
     method: 'GET',
@@ -97,6 +95,7 @@ function loadTweets() {
     }
   });
 };
+
 
 $("#compose-butt").click(function(event) {
   event.preventDefault;
