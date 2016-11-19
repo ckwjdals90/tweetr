@@ -25,7 +25,6 @@
   line-height: 80px;
   margin: 0;
   padding-left: 10px;
-
 }
 
 #nav-bar #compose-butt {
@@ -46,5 +45,4 @@
 #nav-bar #compose-butt:hover {
   color: black;
   opacity: 1;
-
 }

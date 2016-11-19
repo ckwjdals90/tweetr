@@ -12,15 +12,14 @@
   right: 2em;
   width: 400px;
   transition: all ease 1s;
-
 }
+
 .tweet:hover {
   transform: scale(1.01);
   opacity: 1;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
-
 }
 
 .tweet header {
@@ -30,7 +29,6 @@
   margin: 0;
   overflow: auto;
   padding: 0 5px;
-
 }
 
 .tweet header img {
@@ -48,7 +46,6 @@
   float: left;
   margin: 0;
   padding-top: 10px;
-
 }
 
 .tweet header h4 {
@@ -58,7 +55,6 @@
   padding-right: 10px;
   padding-top: 10px;
   right: 0;
-
 }
 
 .tweet p {
@@ -68,7 +64,6 @@
   min-height: 60px;
   padding: 0 5px;
   width: 400px;
-
 }
 
 .tweet footer {
@@ -76,7 +71,6 @@
   box-sizing: border-box;
   display: line-block;
   height: 30px;
-
 }
 
 .tweet footer h5 {
@@ -85,7 +79,6 @@
   float: left;
   margin: 0;
   padding: 0 5px;
-
 }
 
 .tweet footer i {
@@ -98,8 +91,4 @@
 
 .tweet:hover footer i {
   display: block;
-
 }
-
-
-
