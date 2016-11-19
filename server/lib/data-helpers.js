@@ -5,6 +5,7 @@ const simulateDelay = require("./util/simulate-delay");
 
 // Defines helper functions for saving and getting tweets, using the database `db`
 const sortNewestFirst = (a, b)=> a.created_at - b.created_at;
+
 module.exports = function makeDataHelpers(db) {
   return {
 

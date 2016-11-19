@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(function() {
 
   var $container = $('#tweets-container').html('');
@@ -18,7 +19,7 @@ $(function() {
     var avatar = tweetData.user.avatars.regular;
     var handle = tweetData.user.handle;
     var content = tweetData.content.text;
-    var date = tweetData.created_at;
+    var date = moment(new Date(tweetData.created_at)).fromNow();
 
     // var $avatar = $('<img href=' + avatar + '>').addClass('display-picture');
     var $avatar = $('<img>')
@@ -30,9 +31,9 @@ $(function() {
     var $content = $('<p>').text(content);
     var $footer = $('<footer>')
       .append($('<h5>').text(date))
-      .append($('<a>').attr('href', '#').text('A'))
-      .append($('<a>').attr('href', '#').text('B'))
-      .append($('<a>').attr('href', '#').text('C'));
+      .append($('<i>').addClass('fa fa-heart').attr('aria-hidden', 'true'))
+      .append($('<i>').addClass('fa fa-refresh').attr('aria-hidden', 'true'))
+      .append($('<i>').addClass('fa fa-flag').attr('aria-hidden', 'true'));
 
     // var $date = $('<h5>' + date + '</h5>');
     // var $footer = $('<footer>')
@@ -58,11 +59,11 @@ $(function() {
     var inputText = thisForm.find("textarea").val()
 
     if (inputText.length == "") {
-      $(this).append($("<p>").text("NO CONTENT!").css("float", "right").delay(300).fadeOut('slow'))
+      $(".warning").show().text("NO CONTENT!").css("color", "red").css("float", "right").delay(300).fadeOut('slow');
       return false;
     }
     if (inputText.length >140) {
-      $(this).append($("<p>").text("CONTENT LIMIT EXCEEDED!").css("float", "right").delay(300).fadeOut('slow'))
+      $(".warning").show().text("CONTENT LIMIT EXCEEDED!").css("color", "red").css("float", "right").delay(300).fadeOut('slow');
       return false;
     }
 

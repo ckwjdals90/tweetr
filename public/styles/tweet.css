@@ -67,6 +67,7 @@
   margin: 24px 0;
   min-height: 60px;
   padding: 0 5px;
+  width: 400px;
 
 }
 
@@ -87,18 +88,17 @@
 
 }
 
-.tweet footer a {
+.tweet footer i {
   display: none;
   margin: 0;
   float: right;
   padding-right: 10px;
+  padding-top: 5px;
 }
 
-.tweet:hover footer a {
+.tweet:hover footer i {
   display: block;
-/*  margin: 0;
-  float: right;
-  padding-right: 10px;*/
+
 }
 
 
